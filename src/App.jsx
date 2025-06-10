@@ -52,7 +52,7 @@ function App() {
   return (
     <div>
       <h1>Cart</h1>
-      <div style={{ display: "flex", gap: "100px" }}>
+      <div style={{ display: "flex", gap: "100px", flexWrap: "wrap" }}>
         <div>
           <h2>products</h2>
           {isLoading ? (
@@ -99,6 +99,7 @@ const ProductItem = ({ item, cartItems, setCartItems }) => {
     });
 
     let newCartItems = [];
+
     if (doesExists) {
       newCartItems = cartItems.map((cartItem) => {
         if (cartItem.id === item.id) {
@@ -106,6 +107,7 @@ const ProductItem = ({ item, cartItems, setCartItems }) => {
         }
         return cartItem;
       });
+
       setCartItems(newCartItems);
     } else {
       setCartItems((prev) => [
@@ -121,7 +123,7 @@ const ProductItem = ({ item, cartItems, setCartItems }) => {
     <div
       onClick={handleClick}
       style={{
-        width: "400px",
+        width: "20rem",
         padding: "8px",
         border: "1px solid black",
         margin: "10px",
