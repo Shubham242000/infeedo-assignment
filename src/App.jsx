@@ -72,7 +72,12 @@ function App() {
           <h2>cart items</h2>
           {cartItems.length > 0
             ? cartItems.map((cartItem) => (
-                <div>
+                <div
+                  style={{
+                    margin: "10px 0",
+                    fontSize: "18px",
+                  }}
+                >
                   {" "}
                   {cartItem.title}{" "}
                   <span style={{ background: "aqua" }}>
