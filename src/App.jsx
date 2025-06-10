@@ -70,18 +70,20 @@ function App() {
         </div>
         <div>
           <h2>cart items</h2>
-          {cartItems.map((cartItem) => (
-            <div>
-              {" "}
-              {cartItem.title}{" "}
-              <span style={{ background: "aqua" }}>
-                {" "}
-                Count = {cartItem.count}
-              </span>{" "}
-              <button onClick={() => handleAdd(cartItem)}>+</button>
-              <button onClick={() => handleSub(cartItem)}>-</button>
-            </div>
-          ))}
+          {cartItems.length > 0
+            ? cartItems.map((cartItem) => (
+                <div>
+                  {" "}
+                  {cartItem.title}{" "}
+                  <span style={{ background: "aqua" }}>
+                    {" "}
+                    Count = {cartItem.count}
+                  </span>{" "}
+                  <button onClick={() => handleAdd(cartItem)}>+</button>
+                  <button onClick={() => handleSub(cartItem)}>-</button>
+                </div>
+              ))
+            : "No Items in the cart, select something from products!"}
         </div>
       </div>
     </div>
